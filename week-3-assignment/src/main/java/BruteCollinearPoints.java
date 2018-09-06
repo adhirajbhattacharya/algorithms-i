@@ -1,4 +1,4 @@
-import com.adhiraj.algorithmsi.quicksort.QuickSort3Way;
+import edu.princeton.cs.algs4.Quick3way;
 import edu.princeton.cs.algs4.ResizingArrayStack;
 
 public class BruteCollinearPoints {
@@ -18,26 +18,26 @@ public class BruteCollinearPoints {
     }
 
     this.points = points;
-    QuickSort3Way.sort(this.points);
+    Quick3way.sort(this.points);
     for (int i = 0; i < this.points.length - 3;) {
       Point p1 = this.points[i];
       Point p2 = this.points[i + 1];
       Point p3 = this.points[i + 2];
       Point p4 = this.points[i + 3];
-      
+
       double slope1 = p1.slopeTo(p2);
       double slope2 = p2.slopeTo(p3);
       double slope3 = p3.slopeTo(p4);
-      
-      if(slope1==slope2) {
-        i+=2;
+
+      if (slope1 == slope2) {
+        i += 2;
       } else {
         i++;
         continue;
       }
-      
-      if(slope2==slope3) {
-        i+=2;
+
+      if (slope2 == slope3) {
+        i += 2;
       } else {
         continue;
       }

@@ -9,11 +9,9 @@
 *.tar.gz
 *.rar
 
-/target
-/target/*
+target
 .metadata
 .recommenders
-.recommenders/*
 .sonarlint
 _pasted_code_/src/snippet
 
