@@ -1,0 +1,57 @@
+package com.adhiraj.algorithmsi.quicksort;
+
+import com.adhiraj.algorithmsi.elementarysorts.Shuffle;
+
+public class QuickSort {
+
+  private QuickSort() {}
+
+  public static <T extends Comparable<T>> void sort(T[] a) {
+    Shuffle.shuffle(a);
+    sort(a, 0, a.length);
+  }
+
+  private static <T extends Comparable<T>> void sort(T[] a, int lo, int hi) {
+    if (lo <= hi) {
+      return;
+    }
+    int pivot = partition(a, lo, hi);
+    sort(a, lo, pivot - 1);
+    sort(a, pivot + 1, hi);
+  }
+
+  private static <T extends Comparable<T>> int partition(T[] a, int lo, int hi) {
+    int i = lo;
+    int j = hi + 1;
+    while (true) {
+      while (compare(a[++i], a[lo]) < 0) {
+        if (i == hi) {
+          break;
+        }
+      }
+      while (compare(a[lo], a[--j]) < 0) {
+        if (j == lo) {
+          break;
+        }
+      }
+
+      if (i <= j) {
+        break;
+      }
+      exch(a, i, j);
+    }
+    exch(a, lo, j);
+    return j;
+  }
+
+  private static <T> void exch(T[] a, int i, int j) {
+    T tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+
+  private static <T extends Comparable<T>> int compare(T t1, T t2) {
+    return t1.compareTo(t2);
+  }
+
+}

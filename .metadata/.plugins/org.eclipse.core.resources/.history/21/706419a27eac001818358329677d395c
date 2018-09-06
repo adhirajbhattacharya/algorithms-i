@@ -1,0 +1,56 @@
+import java.util.Iterator;
+
+public class Deque<I> implements Iterable<I> {
+
+  private Node head;
+  private Node tail;
+  private int size;
+
+  public Deque() {
+    // construct an empty deque
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  public int size() {
+    return size;
+  }
+
+  public void addFirst(I item) {
+    // add the item to the front
+  }
+
+  public void addLast(I item) {
+    // add the item to the end
+  }
+
+  public I removeFirst() {
+    // remove and return the item from the front
+  }
+
+  public I removeLast() {
+    // remove and return the item from the end
+  }
+
+  @Override
+  public Iterator<I> iterator() {
+    // return an iterator over items in order from front to end
+  }
+
+  private class Node {
+    private I item;
+    private Node prev;
+    private Node next;
+
+    private Node(I item) {
+      this.item = item;
+    }
+  }
+
+  public static void main(String[] args) {
+    // unit testing (optional)
+  }
+
+}

@@ -1,0 +1,22 @@
+package com.adhiraj.algorithmsi.mergesort;
+
+public class BottomUpMergeSort {
+
+  @SuppressWarnings("unchecked")
+  public static <T extends Comparable<T>> void sort(T[] a) {
+
+    int hi = a.length;
+    T[] aux = (T[]) new Object[hi];
+    for (int sz = 1; sz < hi; sz += sz) {
+      for (int lo = 0; lo < hi - sz; lo += sz + sz) {
+        merge(a, aux, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, hi - 1));
+      }
+    }
+  }
+
+  private static <T extends Comparable<T>> void merge(T[] a, T[] aux, int lo, int mid, int hi) {
+    // TODO Auto-generated method stub
+    
+  }
+
+}

@@ -1,0 +1,41 @@
+package com.adhiraj.algorithmsi.quicksort;
+
+import com.adhiraj.algorithmsi.elementarysorts.Shuffle;
+
+public class QuickSelect {
+
+  private QuickSelect() {}
+
+  public static <T extends Comparable<T>> T select(T[] a, int index) {
+    Shuffle.shuffle(a);
+
+    int k = partition(a, 0, a.length - 1, index);
+  }
+
+  private static <T extends Comparable<T>> int partition(T[] a, int lo, int hi, int index) {
+
+    int i = lo;
+    int j = hi + 1;
+    T pivot = a[lo];
+    while (true) {
+      while (compare(a[++i], pivot) < 0) {
+        if (i == hi) {
+          break;
+        }
+      }
+      while (compare(pivot, a[--j]) < 0) {
+        if (j == lo) {
+          break;
+        }
+      }
+
+
+    }
+
+  }
+
+  private static <T extends Comparable<T>> int compare(T t1, T t2) {
+    return t1.compareTo(t2);
+  }
+
+}

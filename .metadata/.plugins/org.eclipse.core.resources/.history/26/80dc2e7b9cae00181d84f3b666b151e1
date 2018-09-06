@@ -1,0 +1,17 @@
+package com.adhiraj.algorithmsi.mergesort;
+
+public class BottomUpMergeSort {
+
+  @SuppressWarnings("unchecked")
+  public static <T extends Comparable<T>> void sort(T[] a) {
+
+    int hi = a.length;
+    T[] aux = (T[]) new Object[h];
+    for (int sz = 1; sz < hi; sz += sz) {
+      for (int lo = 0; lo < hi - sz; lo += sz + sz) {
+        merge(a, aux, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, hi - 1));
+      }
+    }
+  }
+
+}

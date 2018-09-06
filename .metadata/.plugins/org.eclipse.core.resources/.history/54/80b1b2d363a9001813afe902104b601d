@@ -1,0 +1,25 @@
+package com.adhiraj.algorithmsi.elementarysorts;
+
+public class SelectionSort {
+
+	private SelectionSort() {
+	}
+
+	public static <T> void sort(Comparable<T>[] a) {
+
+		for (int i = 0; i < a.length - 1; i++) {
+			int min = i;
+			for (int j = i + 1; j < a.length; j++) {
+				if (less(a[min], a[j]) > 1) {
+					min = j;
+				}
+			}
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	private static <T> int less(Comparable<T> x, Comparable<T> y) {
+		return x.compareTo((T) y);
+	}
+
+}

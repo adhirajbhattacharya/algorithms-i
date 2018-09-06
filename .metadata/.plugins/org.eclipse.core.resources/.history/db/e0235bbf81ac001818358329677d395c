@@ -1,0 +1,10 @@
+import java.util.Iterator;
+
+public class RandomizedQueue<I> implements Iterable<I> {
+
+  public Iterator<I> iterator() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+}

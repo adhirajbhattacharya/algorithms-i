@@ -1,0 +1,8 @@
+
+hsquid:S2184 "BCast one of the operands of this division operation to a "double".(ü¢çöHÊRMINORZBUG
+fsquid:S2184 "@Cast one of the operands of this integer division to a "double".(ü¢çöHËRMINORZBUG
+j
+squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿHÌRMAJORZ
+CODE_SMELL
+ysquid:S00116"LRename this field "T" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øøÝHÍRMINORZ
+CODE_SMELL

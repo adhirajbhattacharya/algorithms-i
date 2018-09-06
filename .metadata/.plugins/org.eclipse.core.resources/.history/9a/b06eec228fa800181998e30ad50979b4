@@ -1,0 +1,106 @@
+package com.adhiraj.algorithmsi.queue;
+
+import java.util.NoSuchElementException;
+
+public class ArrayQueue<I> {
+
+	private I[] queue;
+	private int head;
+	private int tail;
+	
+	public ArrayQueue() {
+		queue = (I[]) new Object[1];
+		head=-1;
+		tail=-1;
+	}
+
+	public void enqueue(I item) {
+		Node node = new Node(item);
+		if (isEmpty()) {
+			head = node;
+			tail = node;
+		} else {
+			tail.next = node;
+			tail = tail.next;
+		}
+		count++;
+		assert check();
+	}
+
+	public I dequeue() {
+		if (isEmpty()) {
+			throw new NoSuchElementException("Queue underflow");
+		}
+		I item = head.item;
+		head = head.next;
+		count--;
+		if (isEmpty()) {
+			tail = null;
+		}
+		assert check();
+		return item;
+	}
+
+	public I peek() {
+		if (isEmpty()) {
+			throw new NoSuchElementException("Queue underflow");
+		}
+		return head.item;
+	}
+
+	public int size() {
+		return count;
+	}
+
+	public boolean isEmpty() {
+		return head == null;
+	}
+
+	private class Node {
+		private I item;
+		private Node next;
+
+		private Node(I item) {
+			this.item = item;
+		}
+	}
+
+	// public String toString() { StringBuilder s = new StringBuilder(); for (Item
+	// item : this) s.append(item + " "); return s.toString(); }
+
+	private boolean check() {
+
+		if (count < 0) {
+			return false;
+		}
+		if (count == 0) {
+			if (head != null || tail != null) {
+				return false;
+			}
+		} else if (count == 1) {
+			if (head == null || tail == null || head != tail || head.next == null) {
+				return false;
+			}
+		} else {
+			if (head == null || tail == null || head == tail || head.next == null || tail.next != null) {
+				return false;
+			}
+			
+			Node lastNode = head;
+			while (lastNode.next != null) {
+				lastNode = lastNode.next;
+			}
+			if (tail != lastNode) {
+				return false;
+			}
+		}
+
+		int numberOfNodes = 0;
+		for (Node x = head; x != null; x = x.next) {
+			numberOfNodes++;
+		}
+
+		return numberOfNodes == count;
+	}
+
+}

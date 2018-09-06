@@ -1,0 +1,11 @@
+package com.adhiraj.algorithmsi.quicksort;
+
+public class QuickSort3Way {
+
+  private QuickSort3Way() {}
+
+  public static <T extends Comparable<T>> void sort(T[] a) {
+
+  }
+
+}

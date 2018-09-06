@@ -1,0 +1,4 @@
+
+public class RandomizedQueue<I> implements Iterable<I> {
+
+}

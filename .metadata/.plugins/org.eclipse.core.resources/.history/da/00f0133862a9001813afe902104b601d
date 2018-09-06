@@ -1,0 +1,9 @@
+package com.adhiraj.algorithmsi.elementarysorts;
+
+public class SelectionSort {
+	
+	public static void sort(Comparable<?>[] a) {
+		
+	}
+
+}

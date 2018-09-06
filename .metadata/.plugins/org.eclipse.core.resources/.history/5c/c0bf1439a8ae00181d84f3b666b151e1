@@ -1,0 +1,20 @@
+package com.adhiraj.algorithmsi.quicksort;
+
+import com.adhiraj.algorithmsi.elementarysorts.Shuffle;
+
+public class QuickSelect {
+
+  private QuickSelect() {}
+
+  public static <T extends Comparable> T select(T[] a, int index) {
+    Shuffle.shuffle(a);
+
+    int k = partition(a, 0, a.length - 1, index);
+  }
+
+  private static <T extends Comparable> int partition(T[] a, int lo, int hi, int index) {
+    // TODO Auto-generated method stub
+    
+  }
+
+}

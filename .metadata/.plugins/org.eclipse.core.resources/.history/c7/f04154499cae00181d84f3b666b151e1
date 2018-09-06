@@ -1,0 +1,15 @@
+package com.adhiraj.algorithmsi.mergesort;
+
+public class BottomUpMergeSort {
+
+  public static <T extends Comparable<T>> void sort(T[] a) {
+
+    int hi = a.length;
+    for (int sz = 1; sz < hi; sz += sz) {
+      for (int lo = 0; lo < hi - sz; lo += sz + sz) {
+
+      }
+    }
+  }
+
+}

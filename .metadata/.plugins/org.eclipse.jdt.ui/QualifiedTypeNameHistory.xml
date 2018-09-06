@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.IllegalAccessError"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.elementarysorts.ShellSort"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.mergesort.MergeSort"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.Insertion"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.UF"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdStats"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.unionfind.WeightedQuickUnionPathCompressionUF"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="Deque.DequeIterator"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="RandomizedQueue.RandomIterator"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdRandom"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdIn"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.mergesort.BottomUpMergeSort"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.quicksort.QuickSort"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.elementarysorts.InsertionSort"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.elementarysorts.Shuffle"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.quicksort.QuickSelect"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.Quick"/>
+<fullyQualifiedTypeName name="com.adhiraj.algorithmsi.quicksort.QuickSort3Way"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.In"/>
+<fullyQualifiedTypeName name="Percolation"/>
+<fullyQualifiedTypeName name="PercolationStats"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.WeightedQuickUnionUF"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+</qualifiedTypeNameHistroy>

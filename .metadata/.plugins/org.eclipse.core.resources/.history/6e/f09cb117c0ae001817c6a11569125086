@@ -1,0 +1,20 @@
+public class BruteCollinearPoints {
+  
+  private Point[] points;
+  
+  public BruteCollinearPoints(Point[] points) {
+    if(points == null) {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  public int numberOfSegments() {
+    return 0;
+    // the number of line segments
+  }
+
+  public LineSegment[] segments() {
+    return null;
+    // the line segments
+  }
+}
