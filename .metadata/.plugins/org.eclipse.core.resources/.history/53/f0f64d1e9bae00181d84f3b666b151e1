@@ -1,7 +1,0 @@
-package com.adhiraj.algorithmsi.mergesort;
-
-public class BottomUpMergeSort {
-  
-  public static <T extends Comparable> void sort(<)
-
-}

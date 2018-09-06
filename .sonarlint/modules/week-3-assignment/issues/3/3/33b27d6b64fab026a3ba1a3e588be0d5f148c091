@@ -1,11 +1,0 @@
-
-Gsquid:S1220""Move this file to a named package.HRMINORZ
-CODE_SMELL
-lsquid:S3400"9Remove this method and declare a constant for this value.(¡ğ¬8³´ŠÕÙ,HRMINORZ
-CODE_SMELL
-¸squid:S1186'"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¶ ™’8­Ë€ÕÙ,H–RCRITICALZ
-CODE_SMELL
-’squid:S1210"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(ÆÁ×ıûÿÿÿÿ8­Ë€ÕÙ,H’RMINORZ
-CODE_SMELL
-_squid:S1172"+Remove this unused method parameter "that".(àô·8Èï‰ÕÙ,HRMAJORZ
-CODE_SMELL

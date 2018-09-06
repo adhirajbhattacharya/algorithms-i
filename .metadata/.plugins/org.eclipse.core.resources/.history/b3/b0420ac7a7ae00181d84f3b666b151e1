@@ -1,7 +1,0 @@
-package com.adhiraj.algorithmsi.quicksort;
-
-public class QuickSelect {
-
-  private QuickSelect() {}
-
-}
