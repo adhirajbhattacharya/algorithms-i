@@ -7,8 +7,6 @@ public class Point implements Comparable<Point> {
   private final int x;
   private final int y;
 
-  private final SlopeComparator comparator = new SlopeComparator();
-
   public Point(int x, int y) {
     this.x = x;
     this.y = y;
@@ -53,11 +51,13 @@ public class Point implements Comparable<Point> {
   }
 
   public Comparator<Point> slopeOrder() {
-    return comparator;
+    return new SlopeComparator();
   }
 
   private class SlopeComparator implements Comparator<Point> {
-    private SlopeComparator() {}
+    private SlopeComparator() {
+      // empty constructor
+    }
 
     public int compare(Point o1, Point o2) {
       double slope1 = slopeTo(o1);
@@ -71,5 +71,7 @@ public class Point implements Comparable<Point> {
     return "(" + x + ", " + y + ")";
   }
 
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    // optional test client
+  }
 }

@@ -1,4 +1,3 @@
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -118,25 +117,7 @@ public class Percolation {
   }
 
   public static void main(String[] args) {
-    String filename = "percolation-testing/percolation/input6.txt";
-    In in = new In(filename);
-    String input = in.readLine();
-    int size;
-    if (input != null) {
-      size = Integer.parseInt(in.readLine().trim());
-    } else {
-      throw new NullPointerException("Input file empty");
-    }
-
-    Percolation percolation = new Percolation(size);
-    while (in.hasNextLine()) {
-      String[] index = in.readLine().trim().split(" ");
-      percolation.open(Integer.parseInt(index[0].trim()), Integer.parseInt(index[1].trim()));
-      percolation.isOpen(Integer.parseInt(index[0].trim()), Integer.parseInt(index[1].trim()));
-      percolation.percolates();
-      percolation.numberOfOpenSites();
-      percolation.isFull(Integer.parseInt(index[0].trim()), Integer.parseInt(index[1].trim()));
-    }
+    // optinal test client
   }
 
 }
