@@ -23,6 +23,20 @@ public class Percolation {
     size = n;
   }
 
+  public boolean isOpen(int row, int col) {
+    if (!isIndexValid(row, col)) {
+      throw new IllegalArgumentException(ILLEGAL_ARGUMENTS_MESSAGE);
+    }
+    return opened[get1dIndex(row, col)];
+  }
+
+  public boolean isFull(int row, int col) {
+    if (!isIndexValid(row, col)) {
+      throw new IllegalArgumentException(ILLEGAL_ARGUMENTS_MESSAGE);
+    }
+    return unionfind.connected(top, get1dIndex(row, col));
+  }
+
   public void open(int row, int col) {
     if (!isIndexValid(row, col)) {
       throw new IllegalArgumentException(ILLEGAL_ARGUMENTS_MESSAGE);
@@ -39,19 +53,6 @@ public class Percolation {
     connectLeftNode(row, col);
     connectDownNode(row, col);
     connectRightNode(row, col);
-  }
-
-  private void connectToVirtualTop(int row, int col) {
-    if (row == 1) {
-      unionfindBackwash.union(get1dIndex(row, col), top);
-      unionfind.union(get1dIndex(row, col), top);
-    }
-  }
-
-  private void connectToVirtualBottom(int row, int col) {
-    if (row == size) {
-      unionfindBackwash.union(get1dIndex(row, col), bottom);
-    }
   }
 
   private void connectUpNode(int row, int col) {
@@ -86,18 +87,17 @@ public class Percolation {
     }
   }
 
-  public boolean isOpen(int row, int col) {
-    if (!isIndexValid(row, col)) {
-      throw new IllegalArgumentException(ILLEGAL_ARGUMENTS_MESSAGE);
+  private void connectToVirtualTop(int row, int col) {
+    if (row == 1) {
+      unionfindBackwash.union(get1dIndex(row, col), top);
+      unionfind.union(get1dIndex(row, col), top);
     }
-    return opened[get1dIndex(row, col)];
   }
 
-  public boolean isFull(int row, int col) {
-    if (!isIndexValid(row, col)) {
-      throw new IllegalArgumentException(ILLEGAL_ARGUMENTS_MESSAGE);
+  private void connectToVirtualBottom(int row, int col) {
+    if (row == size) {
+      unionfindBackwash.union(get1dIndex(row, col), bottom);
     }
-    return unionfind.connected(top, get1dIndex(row, col));
   }
 
   public int numberOfOpenSites() {

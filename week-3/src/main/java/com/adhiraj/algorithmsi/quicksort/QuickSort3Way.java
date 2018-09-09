@@ -12,6 +12,11 @@ public class QuickSort3Way {
     sort(a, 0, a.length - 1);
   }
 
+  public static <T extends Comparable<T>> void sort(T[] a, Comparator<T> c) {
+    StdRandom.shuffle(a);
+    sort(a, 0, a.length - 1, c);
+  }
+
   private static <T extends Comparable<T>> void sort(T[] a, int lo, int hi) {
     if (hi <= lo) {
       return;
@@ -36,15 +41,6 @@ public class QuickSort3Way {
     sort(a, gt + 1, hi);
   }
 
-  private static <T extends Comparable<T>> int compare(T t1, T t2) {
-    return t1.compareTo(t2);
-  }
-
-  public static <T extends Comparable<T>> void sort(T[] a, Comparator<T> c) {
-    StdRandom.shuffle(a);
-    sort(a, 0, a.length - 1, c);
-  }
-
   private static <T> void sort(T[] a, int lo, int hi, Comparator<T> c) {
     int lt = lo;
     int gt = hi;
@@ -64,6 +60,10 @@ public class QuickSort3Way {
     }
     sort(a, lo, lt - 1, c);
     sort(a, gt + 1, hi, c);
+  }
+
+  private static <T extends Comparable<T>> int compare(T t1, T t2) {
+    return t1.compareTo(t2);
   }
 
   private static <T> int compare(T t1, T t2, Comparator<T> c) {

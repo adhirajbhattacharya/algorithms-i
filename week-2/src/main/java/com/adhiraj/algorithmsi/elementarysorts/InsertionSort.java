@@ -21,16 +21,12 @@ public class InsertionSort {
     }
   }
 
-  private static <T extends Comparable<T>> int compare(T t1, T t2) {
-    return t1.compareTo(t2);
-  }
-
   public static <T> void sort(T[] a, Comparator<T> c) {
     sort(a, 0, a.length - 1, c);
   }
 
   public static <T> void sort(T[] a, int lo, int hi, Comparator<T> c) {
-
+  
     for (int i = lo + 1; i <= hi; i++) {
       for (int j = i; j > lo; j--) {
         if (compare(a[j - 1], a[j], c) == 1) {
@@ -38,6 +34,10 @@ public class InsertionSort {
         }
       }
     }
+  }
+
+  private static <T extends Comparable<T>> int compare(T t1, T t2) {
+    return t1.compareTo(t2);
   }
 
   private static <T> int compare(T t1, T t2, Comparator<T> c) {

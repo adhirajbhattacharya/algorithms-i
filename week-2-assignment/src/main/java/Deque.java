@@ -8,6 +8,16 @@ public class Deque<Item> implements Iterable<Item> {
   private Node tail;
   private int size;
 
+  private class Node {
+    private Item item;
+    private Node prev;
+    private Node next;
+  
+    private Node(Item item) {
+      this.item = item;
+    }
+  }
+
   public Deque() {
     // Attributes will be defaulted to get empty deque
   }
@@ -90,16 +100,6 @@ public class Deque<Item> implements Iterable<Item> {
 
   public Iterator<Item> iterator() {
     return new DequeIterator();
-  }
-
-  private class Node {
-    private Item item;
-    private Node prev;
-    private Node next;
-
-    private Node(Item item) {
-      this.item = item;
-    }
   }
 
   private class DequeIterator implements Iterator<Item> {

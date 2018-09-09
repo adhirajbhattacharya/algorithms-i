@@ -17,6 +17,17 @@ public class BottomUpMergeSort {
     }
   }
 
+  @SuppressWarnings("unchecked")
+  public static <T> void sort(T[] a, Comparator<T> c) {
+    int hi = a.length - 1;
+    T[] aux = (T[]) new Object[a.length];
+    for (int sz = 1; sz <= hi; sz += sz) {
+      for (int lo = 0; lo <= hi - sz; lo += sz + sz) {
+        merge(a, aux, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, hi), c);
+      }
+    }
+  }
+
   private static <T extends Comparable<T>> void merge(T[] a, T[] aux, int lo, int mid, int hi) {
     for (int i = lo; i <= hi; i++) {
       aux[i] = a[i];
@@ -32,21 +43,6 @@ public class BottomUpMergeSort {
         a[k] = aux[j++];
       } else {
         a[k] = aux[i++];
-      }
-    }
-  }
-
-  private static <T extends Comparable<T>> int compare(T t1, T t2) {
-    return t1.compareTo(t2);
-  }
-
-  @SuppressWarnings("unchecked")
-  public static <T> void sort(T[] a, Comparator<T> c) {
-    int hi = a.length - 1;
-    T[] aux = (T[]) new Object[a.length];
-    for (int sz = 1; sz <= hi; sz += sz) {
-      for (int lo = 0; lo <= hi - sz; lo += sz + sz) {
-        merge(a, aux, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, hi), c);
       }
     }
   }
@@ -68,6 +64,10 @@ public class BottomUpMergeSort {
         a[k] = aux[i++];
       }
     }
+  }
+
+  private static <T extends Comparable<T>> int compare(T t1, T t2) {
+    return t1.compareTo(t2);
   }
 
   private static <T> int compare(T t1, T t2, Comparator<T> c) {

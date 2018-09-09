@@ -27,6 +27,23 @@ public class QuickSelect {
     return a[lo];
   }
 
+  public static <T> T select(T[] a, int index, Comparator<T> c) {
+    Shuffle.shuffle(a);
+    int lo = 0;
+    int hi = a.length - 1;
+    while (hi > lo) {
+      int k = partition(a, lo, hi, c);
+      if (index < k) {
+        hi = k - 1;
+      } else if (index > k) {
+        lo = k + 1;
+      } else {
+        return a[k];
+      }
+    }
+    return a[index];
+  }
+
   private static <T extends Comparable<T>> int partition(T[] a, int lo, int hi) {
 
     int i = lo;
@@ -53,29 +70,8 @@ public class QuickSelect {
     return j;
   }
 
-  private static <T extends Comparable<T>> int compare(T t1, T t2) {
-    return t1.compareTo(t2);
-  }
-
-  public static <T> T select(T[] a, int index, Comparator<T> c) {
-    Shuffle.shuffle(a);
-    int lo = 0;
-    int hi = a.length - 1;
-    while (hi > lo) {
-      int k = partition(a, lo, hi, c);
-      if (index < k) {
-        hi = k - 1;
-      } else if (index > k) {
-        lo = k + 1;
-      } else {
-        return a[k];
-      }
-    }
-    return a[index];
-  }
-
   private static <T> int partition(T[] a, int lo, int hi, Comparator<T> c) {
-
+  
     int i = lo;
     int j = hi + 1;
     T pivot = a[lo];
@@ -90,7 +86,7 @@ public class QuickSelect {
           break;
         }
       }
-
+  
       if (i >= j) {
         break;
       }
@@ -98,6 +94,10 @@ public class QuickSelect {
     }
     exch(a, lo, j);
     return j;
+  }
+
+  private static <T extends Comparable<T>> int compare(T t1, T t2) {
+    return t1.compareTo(t2);
   }
 
   private static <T> int compare(T t1, T t2, Comparator<T> c) {
