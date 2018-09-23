@@ -4,21 +4,16 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.adhiraj.algorithms.i</groupId>
-  <artifactId>week-4</artifactId>
+  <artifactId>week-4-assignment</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>week-4</name>
-  <description>Priority Queues, Binary Heap, Heap Sort, Symbol Table, BST</description>
+  <name>week-4-assignment</name>
+  <description>8 Puzzle</description>
 
   <dependencies>
     <dependency>
       <groupId>lib.jars</groupId>
       <artifactId>algs4</artifactId>
       <version>1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.adhiraj.algorithms.i</groupId>
-      <artifactId>week-2</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
